@@ -1,12 +1,12 @@
 defmodule HelloScratch.Router do
   use Phoenix.Router
 
-  pipeline :api do
-    plug :accepts, ["json"]
+  pipeline :browser do
+    plug :accepts, ["html"]
   end
 
   scope "/", HelloScratch do
-    pipe_through :api
+    pipe_through :browser
 
     get "/", PageController, :hello
   end
@@ -23,11 +23,11 @@ end
 defmodule HelloScratch.PageView do
   use Phoenix.View, root: "hello_scratch"
 
-  def render("index.json", _assigns) do
+  def render("index.html", _assigns) do
     "Hello World!"
   end
-  
-  def render("404.json", _assigns) do
+
+  def render("404.html", _assigns) do
     "OOPs, we don't have that"
   end
 
