@@ -27,8 +27,4 @@ defmodule HelloScratch.PageView do
     "Hello World!"
   end
 
-  def render("404.html", _assigns) do
-    "OOPs, we don't have that"
-  end
-
 end
